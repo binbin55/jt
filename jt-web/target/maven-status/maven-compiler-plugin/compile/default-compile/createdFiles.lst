@@ -1,0 +1,11 @@
+com\jt\controller\ItemController.class
+com\jt\util\UserThreadLocal.class
+com\jt\config\HttpClientConfig.class
+com\jt\service\impl\ItemServiceImpl.class
+com\jt\service\ItemService.class
+com\jt\util\HttpClientService.class
+com\jt\config\UserInterceptor.class
+com\jt\config\MvcConfigurer.class
+com\jt\controller\UserController.class
+com\jt\SpringBootRun.class
+com\jt\config\HttpClientClose.class

@@ -1,0 +1,9 @@
+com\jt\pojo\Item.class
+com\jt\thro\SysResultControllerAdvice.class
+com\jt\util\ObjectMapperUtil.class
+com\jt\vo\SysResult.class
+com\jt\pojo\ItemDesc.class
+com\jt\pojo\BasePojo.class
+com\jt\pojo\User.class
+com\jt\service\DubboUserService.class
+com\jt\pojo\ItemCat.class

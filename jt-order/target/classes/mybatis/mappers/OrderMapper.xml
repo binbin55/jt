@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jt.mapper.OrderMapper" >
+
+    <select id="findOrderById" resultMap="orderRM">
+        SELECT
+            *
+        FROM
+            tb_order
+        WHERE
+            order_id = #{id}
+    </select>
+
+
+    <!--
+        autoMapping="true" 可以自动封装除主键之外的信息
+    -->
+    <resultMap id="orderRM" type="Order" autoMapping="true">
+        <!-- 配置主键信息 -->
+        <id column="order_id" property="orderId"></id>
+        <!-- 封装订单物流一对一 -->
+        <association property="orderShipping" javaType="OrderShipping" column="order_id" select="findOrderShipping"></association>
+        <!-- 封装订单商品 -->
+        <collection property="orderItems" ofType="OrderItem" column="order_id" select="findOrderItems"></collection>
+    </resultMap>
+
+    <!-- 根据orderId查询订单物流信息 -->
+    <select id="findOrderShipping" resultType="OrderShipping">
+        SELECT
+            *
+        FROM
+            tb_order_shipping
+        WHERE
+            order_id = #{id}
+    </select>
+
+    <select id="findOrderItems" resultType="OrderItem">
+		SELECT
+            *
+        FROM
+            tb_order_item
+        WHERE
+            order_id = #{id}
+	</select>
+
+
+</mapper>
